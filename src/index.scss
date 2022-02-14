@@ -1,0 +1,45 @@
+@import "~normalize.css/normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: radial-gradient(circle, #00d4ff 0%, #090979 100%);
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.button {
+
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 96vw;
+  margin: 0 auto;
+}
+
+.passgen {
+  max-width: 42rem;
+  margin: 0 auto;
+  border: 1px solid #000;
+  background: rgba(255, 255, 255, .2);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-gap: 1rem;
+  padding: 1rem;
+  &__title {
+    text-align: center;
+    grid-column: span 2;
+  }
+}
