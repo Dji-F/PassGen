@@ -14,7 +14,7 @@ input[type="checkbox"] {
 
 }
 
-.app {
+#app {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -28,7 +28,7 @@ input[type="checkbox"] {
 }
 
 .passgen {
-  max-width: 42rem;
+  width: 34rem;
   margin: 0 auto;
   border: 1px solid #000;
   background: rgba(255, 255, 255, .2);
@@ -38,8 +38,23 @@ input[type="checkbox"] {
   align-items: center;
   grid-gap: 1rem;
   padding: 1rem;
+  z-index: 99;
+
   &__title {
     text-align: center;
     grid-column: span 2;
   }
+}
+
+#passgen-bg {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .6);
 }

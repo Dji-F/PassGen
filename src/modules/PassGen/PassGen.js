@@ -1,35 +1,35 @@
-const getTemplate = () => {
-    return `
-        <div class="passgen">
-            <h1 class="passgen__title">Password Generator</h1>
-            <div class="passgen__text">Password length:</div>
-            <div class="wrap">
-                <div id="select"></div>
-            </div>
-            <div class="passgen__text">Include numbers:</div>
-            <label for="numbers">
-                <input type="checkbox" name="numbers" id="numbers">1234567890
-            </label>
-            <div class="passgen__text">Include lowercase characters:</div>
-            <label for="lowercase">
-                <input type="checkbox" name="lowercase" id="lowercase">abcdef
-            </label>
-            <div class="passgen__text">Include uppercase characters:</div>
-            <label for="uppercase">
-                <input type="checkbox" name="uppercase" id="uppercase">ABCDEF
-            </label>
-            <button>Generate password</button>
-            <input type="text">
-        </div>
-    `
-}
+import {templatePassGen} from './templatePassGen'
+import {Select} from '@/modules/select/select'
+import {arrayDataSelect} from '@/assets/functions'
 
 export class PassGen {
     constructor(selector, options) {
         this.$el = document.querySelector(selector)
+        this.selectData = options.select
+        this.#setup()
     }
 
-    open() {}
+    #setup() {
+        this.$el.addEventListener('click', this.open)
+    }
 
-    close() {}
+    clickHandler(event) {
+
+    }
+
+    open() {
+        document.body.insertAdjacentHTML('afterbegin', templatePassGen())
+        new Select('#select', {
+            placeholder: '2',
+            selectedId: '12',
+            data: arrayDataSelect([6, 20]),
+            onSelect(item) {
+                console.log('Select Item', item)
+            }
+        })
+    }
+
+    close() {
+
+    }
 }
