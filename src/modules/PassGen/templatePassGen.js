@@ -19,7 +19,7 @@ export const templatePassGen = () => {
             <label for="uppercase">
                 <input type="checkbox" name="uppercase" id="uppercase">ABCDEF
             </label>
-            <button>Generate password</button>
+            <button data-type="generator-btn">Generate password</button>
             <input type="text">
         </div>
     </div>
