@@ -7,7 +7,8 @@ export class PassGen {
     constructor(selector, options) {
         this.$el = document.querySelector(selector)
         this.selectData = options.selectData ?? [6, 20]
-        this.options = options
+        this.$passInput = ''
+        this.inputCheck = []
         this.#setup()
     }
 
@@ -20,7 +21,7 @@ export class PassGen {
         const {type} = event.target.dataset
         if (type === 'generator-btn') {
             this.$selectValue = document.querySelector('[data-type="value"]').textContent
-            generator(this.options, this.$selectValue)
+            generator(this.$selectValue, this.$passInput, this.inputCheck)
         }
     }
 
@@ -34,7 +35,11 @@ export class PassGen {
                 // selectValue(item.value)
             }
         })
+
         this.$passgen = document.querySelector('#passgen-bg')
+        this.$passInput = this.$passgen.querySelector('[data-type="pass-value"]')
+        this.inputCheck = Array.from(this.$passgen.querySelectorAll('input[type=checkbox]'))
+
         this.clickHandler = this.clickHandler.bind(this)
         this.$passgen.addEventListener('click', this.clickHandler)
     }

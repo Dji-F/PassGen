@@ -8,19 +8,19 @@ export const templatePassGen = () => {
                 <div id="select"></div>
             </div>
             <div class="passgen__text">Include numbers:</div>
-            <label for="numbers">
-                <input type="checkbox" name="numbers" id="numbers">1234567890
+            <label for="number">
+                <input type="checkbox" name="number" checked>1234567890
             </label>
             <div class="passgen__text">Include lowercase characters:</div>
             <label for="lowercase">
-                <input type="checkbox" name="lowercase" id="lowercase">abcdef
+                <input type="checkbox" name="lowercase" checked>abcdef
             </label>
             <div class="passgen__text">Include uppercase characters:</div>
             <label for="uppercase">
-                <input type="checkbox" name="uppercase" id="uppercase">ABCDEF
+                <input type="checkbox" name="uppercase" checked>ABCDEF
             </label>
             <button data-type="generator-btn">Generate password</button>
-            <input type="text">
+            <input type="text" data-type="pass-value">
         </div>
     </div>
     `

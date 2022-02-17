@@ -3,10 +3,7 @@ import './modules/select/styles.scss'
 import './index.scss'
 
 const pass = new PassGen('#PassGen', {
-    selectData: [6, 20],
-    lowercase: true,
-    uppercase: true,
-    number: true
+    selectData: [6, 20]
 })
 
 window.p = pass
