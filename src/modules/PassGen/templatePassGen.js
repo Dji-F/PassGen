@@ -13,14 +13,15 @@ export const templatePassGen = () => {
             </label>
             <div class="passgen__text">Include lowercase characters:</div>
             <label for="lowercase">
-                <input type="checkbox" name="lowercase" checked>abcdef
+                <input type="checkbox" name="lowercase" checked>abcdef...
             </label>
             <div class="passgen__text">Include uppercase characters:</div>
             <label for="uppercase">
-                <input type="checkbox" name="uppercase" checked>ABCDEF
+                <input type="checkbox" name="uppercase" checked>ABCDEF...
             </label>
-            <button data-type="generator-btn">Generate password</button>
-            <input type="text" data-type="pass-value">
+            <button class="button-29" role="button" data-type="generator-btn">Generate password</button>
+<!--            <button data-type="generator-btn">Generate password</button>-->
+            <input type="text" class="passgen__pass-value" data-type="pass-value">
         </div>
     </div>
     `
