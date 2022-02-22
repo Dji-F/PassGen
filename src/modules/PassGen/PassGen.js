@@ -8,6 +8,7 @@ export class PassGen {
         this.$el = document.querySelector(selector)
         this.selectData = options.selectData ?? [6, 20]
         this.$passInput = ''
+        this.$passgen = ''
         this.inputCheck = []
         this.#setup()
     }
@@ -19,10 +20,15 @@ export class PassGen {
 
     clickHandler(event) {
         const {type} = event.target.dataset
+        const closeBtn = event.target.closest('[data-type="close"]')
+
         if (type === 'generator-btn') {
             this.$selectValue = document.querySelector('[data-type="value"]').textContent
             generator(this.$selectValue, this.$passInput, this.inputCheck)
+        } else if (closeBtn) {
+            this.close()
         }
+
     }
 
     open() {
@@ -46,5 +52,6 @@ export class PassGen {
 
     close() {
         this.$passgen.removeEventListener('click', this.clickHandler)
+        this.$passgen.remove()
     }
 }

@@ -1,17 +1,19 @@
 @import "~normalize.css/normalize.css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "./modules/PassGen/passgen.scss";
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-image: radial-gradient(circle, #00d4ff 0%, #090979 100%);
+  color: #fff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 input[type="checkbox"] {
   margin-right: 8px;
-}
-
-.button {
-
 }
 
 #app {
@@ -25,37 +27,4 @@ input[type="checkbox"] {
 .container {
   max-width: 96vw;
   margin: 0 auto;
-}
-
-.passgen {
-  width: 34rem;
-  margin: 0 auto;
-  border: 1px solid #000;
-  background: rgba(255, 255, 255, .2);
-  backdrop-filter: blur(5px);
-  border-radius: 12px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  grid-gap: 1rem;
-  padding: 1rem;
-  z-index: 99;
-
-  &__title {
-    text-align: center;
-    grid-column: span 2;
-  }
-}
-
-#passgen-bg {
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0, 0, 0, .6);
 }
