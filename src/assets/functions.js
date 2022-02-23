@@ -20,3 +20,12 @@ export const arrayDataSelect = (arr = []) => {
     }
     return dataArr
 }
+
+export function copyText(input) {
+    const inputValue = input.value.trim()
+    if (inputValue) {
+        navigator.clipboard.writeText(inputValue)
+            .then(() => alert('Copied password'))
+            .catch(err => console.log(err))
+    }
+}

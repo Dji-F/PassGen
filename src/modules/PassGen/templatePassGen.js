@@ -22,8 +22,14 @@ export const templatePassGen = () => {
                 <input id="uppercase" type="checkbox" name="uppercase" checked />
                 <label for="uppercase">ABCDEF...</label>
             </div>
-            <button class="button-29" role="button" data-type="generator-btn">Generate password</button>
+            <div class="passgen__text">Include symbols:</div>
+            <div>
+                <input id="symbol" type="checkbox" name="symbol" checked />
+                <label for="symbol">-_#$%&()*+<=>?@</label>
+            </div>
+            <button class="button-29 generator-btn" data-type="generator-btn">Generate password</button>
             <input type="text" class="passgen__pass-value" data-type="pass-value">
+            <button class="button-29 copy-btn" data-type="copy-btn">Copy</button>
             <div class="close" data-type="close">
               <span></span>
               <span></span>

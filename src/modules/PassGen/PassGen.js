@@ -1,6 +1,6 @@
 import {templatePassGen} from './templatePassGen'
 import {Select} from '@/modules/select/select'
-import {arrayDataSelect} from '@/assets/functions'
+import {arrayDataSelect, copyText} from '@/assets/functions'
 import {generator} from './generator'
 
 export class PassGen {
@@ -25,6 +25,8 @@ export class PassGen {
         if (type === 'generator-btn') {
             this.$selectValue = document.querySelector('[data-type="value"]').textContent
             generator(this.$selectValue, this.$passInput, this.inputCheck)
+        } else if (type === 'copy-btn') {
+            copyText(this.$passInput)
         } else if (closeBtn) {
             this.close()
         }
@@ -38,7 +40,7 @@ export class PassGen {
             selectedId: '12',
             data: arrayDataSelect(this.selectData),
             onSelect(item) {
-                // selectValue(item.value)
+                // console.log(item)
             }
         })
 
