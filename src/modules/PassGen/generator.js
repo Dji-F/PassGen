@@ -1,6 +1,7 @@
 const LOWERCASE = 'abcdefghijklmnopqrstuvwxyz'
 const UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const NUMBER = '0123456789'
+const SYMBOL = '-_#$%&()*+<=>?@'
 
 function isCheck(input, name) {
     return input.getAttribute('name') === name && input.checked
@@ -17,6 +18,9 @@ export function generator(length, inputOutput, inputCheck) {
         }
         if (isCheck(input, 'number')) {
             allChar += NUMBER
+        }
+        if (isCheck(input, 'symbol')) {
+            allChar += SYMBOL
         }
     })
 
